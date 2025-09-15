@@ -26,7 +26,7 @@ namespace RomanNumerals.ConsoleApp
                         var numberInput = Console.ReadLine();
                         if (int.TryParse(numberInput, out int number) && number >= 1 && number <= 3999)
                         {
-                            var roman = RomanConverter.ConvertNumericToRoman(number);
+                            var roman = RomanConverter.ConvertNumericToRoman(numberInput);
                             Console.WriteLine($"Roman Numeral: {roman}");
                         }
                         else

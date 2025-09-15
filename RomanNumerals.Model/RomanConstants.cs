@@ -1,7 +1,6 @@
 public static class RomanConstants
 {
-      // Dictionary mapping Roman numerals to their decimal values
-        // Two digit ones like these: IV, IX, XL, XC, CD, CM
+        // Dictionary som mappar romerska siffror till siffror. 
         public static readonly System.Collections.Generic.Dictionary<string, int> RomanToDecimalMapTwoDigits = new System.Collections.Generic.Dictionary<string, int>
         {
             {"IV", 4},

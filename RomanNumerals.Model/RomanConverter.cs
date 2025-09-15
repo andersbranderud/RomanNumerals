@@ -5,8 +5,9 @@ using System.Linq;
 namespace RomanNumerals.Model
 {
     public static class RomanConverter
-    {
-      
+    {      
+        /// Konverteras romerska bokstäver till heltal.
+        /// Exempel, input: XX; output: 20
         public static decimal ConvertRomanToNumeric(string roman)
         {
             if (string.IsNullOrEmpty(roman))
@@ -24,10 +25,12 @@ namespace RomanNumerals.Model
                 char? previousChar = currentIndexPosition - 1 >= 0 ? roman[currentIndexPosition - 1] : null;
                 bool hasAppliedCalc = false;
 
+                // Om det finns ytterligare ett tecken.
                 if (previousChar != null)
                 {
                     var twoCharString = $"{previousChar}{currentChar}";
 
+                    // Checka först om det matchar en tvåsiffrig romersk kombination.
                     if (RomanConstants.RomanToDecimalMapTwoDigits.TryGetValue(twoCharString, out int twoDigitValue))
                     {
                         total += twoDigitValue;
@@ -35,7 +38,7 @@ namespace RomanNumerals.Model
                         hasAppliedCalc = true;
                     }
                 }
-                // 1 single digit.
+                //Om det är sista tecknet i loopen, eller om ingen match för tvåsiffrig kombination.
                 if (!hasAppliedCalc)
                 {
                     if (RomanConstants.RomanToDecimalMapSingleDigits.TryGetValue(currentChar, out int singleDigitValue))
@@ -55,6 +58,8 @@ namespace RomanNumerals.Model
             return total;
         }
 
+        /// Konverterar heltal till romerska bokstäver.
+        /// Exempel input: 20; output: XX
         public static string ConvertNumericToRoman(string number)
         {
             if (string.IsNullOrEmpty(number) || !int.TryParse(number, out int numericValue))
@@ -80,7 +85,5 @@ namespace RomanNumerals.Model
 
             return romanNumeral;
         }
-
-
     }
 }

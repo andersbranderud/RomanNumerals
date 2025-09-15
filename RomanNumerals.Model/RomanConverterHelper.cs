@@ -17,10 +17,7 @@ namespace RomanNumerals.Model
             while (currentPosition < lengthOfNumberString)
             {
                 var digit = int.Parse(numberString[currentPosition].ToString());
-                // Ex.
-                var raisedToPowerOf = lengthOfNumberString - 1 - currentPosition;
-                double currentMultiplier = Math.Pow(10, raisedToPowerOf);
-                int currentValue = (int)(digit * currentMultiplier);
+                int currentValue = GetDigitValueAtPosition(digit, currentPosition, lengthOfNumberString);
 
                 if (currentValue != 0)
                 {
@@ -30,6 +27,17 @@ namespace RomanNumerals.Model
             }
 
             return inputSeparatedIntoNumbers;
+        }
+        
+        /// An example. Original number is 2173. We pass in digit: 2; currentPosition: 0, length: 4
+        /// Calculation: 2 * 10 ^ (4 -1 - 0) = 2000.
+        /// For digit: 3; currentPosition 1; length: 4 => 3 * 10 ^ (4 - 2 - 0) = 300  
+        public static int GetDigitValueAtPosition(int digit, int currentPosition, int length)
+        {
+            var raisedToPowerOf = lengthOfNumberString - 1 - currentPosition;
+            double currentMultiplier = Math.Pow(10, raisedToPowerOf);
+            int currentValue = (int)(digit * currentMultiplier);
+            return currentValue;
         }
     }
 }

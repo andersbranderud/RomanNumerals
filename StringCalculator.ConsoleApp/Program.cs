@@ -1,4 +1,6 @@
 ﻿using System;
+using StringCalculator.Model;
+
 
 namespace StringCalculator.ConsoleApp
 {
@@ -6,7 +8,10 @@ namespace StringCalculator.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter numbers to add (comma separated):");
+            string input = Console.ReadLine();
+            int result = StringCalculatorUtility.Add(input);
+            Console.WriteLine($"Result: {result}");
         }
     }
 }

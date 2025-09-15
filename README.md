@@ -9,6 +9,9 @@ Inputvalideringslogiken för metoderna  eftersom att AI brukar göra det effekti
 Totaltid, Cirka 2 timmar for denna uppgift.
 
 
-StringCalculator .
-Total tid this far 
-42 min.
+StringCalculator
+AI USE: Console App - några linjer.
+
+total 72min
+
+16.20...

@@ -18,7 +18,6 @@ public class RomanConverterTests
 
         // Assert
         Assert.Equal(numericalExpected, numericResult);
-
     }
 
     [Theory]
@@ -35,5 +34,32 @@ public class RomanConverterTests
 
         // Assert
         Assert.Equal(romanExpected, romanResult);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData(null)]
+    public void ConvertRomanToDecimal_InvalidInput_ThrowsArgumentException(string roman)
+    {
+        Assert.Throws<ArgumentException>(() => RomanConverter.ConvertRomanToNumeric(roman));
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("abc")]
+    [InlineData(null)]
+    public void ConvertDecimalToRoman_InvalidInput_ThrowsArgumentException(string number)
+    {
+         // Act & Assert
+         var exception = Assert.Throws<System.ArgumentException>(() => RomanConverter.ConvertNumericToRoman(number));
+     }
+
+    [Theory]
+    [InlineData("4000")]
+    [InlineData("0")]
+    public void ConvertDecimalToRoman_InvalidInput_ThrowsArgumentOutOfRangeException(string number)
+    {
+         // Act & Assert
+         var exception = Assert.Throws<System.ArgumentOutOfRangeException>(() => RomanConverter.ConvertNumericToRoman(number));
     }
 }

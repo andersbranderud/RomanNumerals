@@ -9,8 +9,6 @@ namespace RomanNumerals.ConsoleApp
         {
             Console.WriteLine("Hello World!");
 
-            //listen to user input .. call method 1 or 2 depdning on input. Option for x
-
             while (true)
             {
                 Console.WriteLine("Enter a number.");

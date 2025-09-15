@@ -31,17 +31,17 @@ namespace RomanNumerals.Model
                     if (RomanConstants.RomanToDecimalMapTwoDigits.TryGetValue(twoCharString, out int twoDigitValue))
                     {
                         total += twoDigitValue;
-                        currentIndexPosition -= 2; // Move back by 2 for two-character numeral
+                        currentIndexPosition -= 2;
                         hasAppliedCalc = true;
                     }
                 }
-                // 1 single digit
+                // 1 single digit.
                 if (!hasAppliedCalc)
                 {
                     if (RomanConstants.RomanToDecimalMapSingleDigits.TryGetValue(currentChar, out int singleDigitValue))
                     {
                         total += singleDigitValue;
-                        currentIndexPosition--; // Move back by 1 for single-character numeral
+                        currentIndexPosition--;
                     }
                     else
                     {
@@ -81,6 +81,8 @@ namespace RomanNumerals.Model
             return romanNumeral;
         }
 
+        // This method divides the number into thousands, hundreds, tens and ones.
+        // Example: 2021 -> [2000, 20, 1]
         private static List<int> DivideNumberIntoThousandsHundredsTensAndOnes(string numberString)
         {
             var lengthOfNumberString = numberString.Length;

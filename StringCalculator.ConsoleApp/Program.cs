@@ -1,7 +1,6 @@
 ﻿using System;
 using StringCalculator.Model;
 
-
 namespace StringCalculator.ConsoleApp
 {
     class Program

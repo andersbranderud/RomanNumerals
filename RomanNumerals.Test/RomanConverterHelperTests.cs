@@ -39,7 +39,7 @@ namespace RomanNumerals.Test
         }
         
 
-        public void AssertListIsExpected(List<int> resultList, List<int> expectedList)
+        private void AssertListIsExpected(List<int> resultList, List<int> expectedList)
         {
             var index = 0;
             foreach (var result in resultList)

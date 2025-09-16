@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace StringCalculator.Model
 {
     public static class StringCalculatorUtility
     {
-        /// Metoden tar in en sträng av tal, separerade av godtyckligt antal avgränsare,
+        ///Metoden tar in en sträng av tal, separerade av godtyckligt antal avgränsare,
         /// och returnerar summan - ex "1" eller "1,2", ska returnera 1 och 3
         /// Tillåt metoden att kunna hantera olika sorters avgränsare. Exempel
         /// [delimiter]\n[numbers…]” - “//;\n1;2” returnerar 3. Ignorera nummer större än 1000.

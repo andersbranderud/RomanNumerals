@@ -16,7 +16,7 @@ public class StringCalculatorTests
     [InlineData("//;\n1;2;20000------", 3)]
     [InlineData("//;\n999;1001;20000------", 999)]
     [InlineData("//;\n1;2;3,4x5i6", 21)]
-    public void Add_ValidInput_ThrowsException(string input, int expectedSum)
+    public void Add_ValidInput_CalculatesSum(string input, int expectedSum)
     {
         var actualSum = StringCalculatorUtility.Add(input);
         Assert.Equal(expectedSum, actualSum);

@@ -6,6 +6,10 @@ namespace StringCalculator.Model
 {
     public static class StringCalculatorUtility
     {
+        /// Metoden tar in en sträng av tal, separerade av godtyckligt antal avgränsare,
+        /// och returnerar summan - ex "1" eller "1,2", ska returnera 1 och 3
+        /// Tillåt metoden att kunna hantera olika sorters avgränsare. Exempel
+        /// [delimiter]\n[numbers…]” - “//;\n1;2” returnerar 3. Ignorera nummer större än 1000.
         public static int Add(string numbers)
         {
             // Validera inte null eller tom sträng.
@@ -39,7 +43,6 @@ namespace StringCalculator.Model
                         if (currentNumberInt <= 1000)
                         {
                             totalSum += currentNumberInt;
-                            Console.WriteLine("total sum is" + totalSum);
                         }
                     }
                     currentNumber = string.Empty;

@@ -34,7 +34,7 @@ namespace RomanNumerals.Model
         /// For digit: 3; currentPosition 1; length: 4 => 3 * 10 ^ (4 - 2 - 0) = 300  
         public static int GetDigitValueAtPosition(int digit, int currentPosition, int length)
         {
-            var raisedToPowerOf = lengthOfNumberString - 1 - currentPosition;
+            var raisedToPowerOf = length - 1 - currentPosition;
             double currentMultiplier = Math.Pow(10, raisedToPowerOf);
             int currentValue = (int)(digit * currentMultiplier);
             return currentValue;

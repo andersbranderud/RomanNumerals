@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace RomanNumerals.Model
 {
@@ -75,9 +73,9 @@ namespace RomanNumerals.Model
 
             var numbersDividedArray = RomanConverterHelper.DivideNumberIntoThousandsHundredsTensAndOnes(number);
 
-            foreach (var num in numbersDividedArray)
+            foreach (var currentNumber in numbersDividedArray)
             {
-                if (RomanConstants.DecimalToRomanMap.TryGetValue(num, out string romanValue))
+                if (RomanConstants.DecimalToRomanMap.TryGetValue(currentNumber, out string romanValue))
                 {
                     romanNumeral += romanValue;
                 }

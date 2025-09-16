@@ -1,4 +1,3 @@
-using Xunit;
 using RomanNumerals.Model;
 
 namespace RomanNumerals.Test
@@ -9,7 +8,7 @@ namespace RomanNumerals.Test
         public void DivideNumberIntoThousandsHundredsTensAndOnes_ThousandsTensAndOnes_Verify()
         {
             List<int> resultList = RomanConverterHelper.DivideNumberIntoThousandsHundredsTensAndOnes("2021");
-            List<int> expectedList = new List<int> { 2000, 20, 1 };
+            List<int> expectedList = [2000, 20, 1];
             AssertListIsExpected(resultList, expectedList);
         }
 

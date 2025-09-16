@@ -13,10 +13,8 @@ public class RomanConverterTests
     [InlineData("MMXXI", 2021)]
     public void ConvertRomanToDecimal_VariousInputs_VerifyConversion(string roman, int numericalExpected)
     {
-        // Act
         var numericResult = RomanConverter.ConvertRomanToNumeric(roman);
 
-        // Assert
         Assert.Equal(numericalExpected, numericResult);
     }
 
@@ -29,10 +27,8 @@ public class RomanConverterTests
     
     public void ConvertDecimalToRoman_VariousInputs_VerifyConversion(string number, string romanExpected)
     {
-        // Act
         var romanResult = RomanConverter.ConvertNumericToRoman(number);
 
-        // Assert
         Assert.Equal(romanExpected, romanResult);
     }
 
@@ -50,8 +46,7 @@ public class RomanConverterTests
     [InlineData(null)]
     public void ConvertDecimalToRoman_InvalidInput_ThrowsArgumentException(string number)
     {
-         // Act & Assert
-         var exception = Assert.Throws<System.ArgumentException>(() => RomanConverter.ConvertNumericToRoman(number));
+         Assert.Throws<System.ArgumentException>(() => RomanConverter.ConvertNumericToRoman(number));
      }
 
     [Theory]
@@ -59,7 +54,6 @@ public class RomanConverterTests
     [InlineData("0")]
     public void ConvertDecimalToRoman_InvalidInput_ThrowsArgumentOutOfRangeException(string number)
     {
-         // Act & Assert
-         var exception = Assert.Throws<System.ArgumentOutOfRangeException>(() => RomanConverter.ConvertNumericToRoman(number));
+         Assert.Throws<ArgumentOutOfRangeException>(() => RomanConverter.ConvertNumericToRoman(number));
     }
 }

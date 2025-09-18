@@ -12,7 +12,7 @@ namespace StringCalculator.ConsoleApp
 
             while (true)
             {
-                Console.WriteLine("Enter numbers to add (comma separated):");
+                Console.WriteLine("\nEnter numbers to add (comma separated):");
 
                 string input = Console.ReadLine();
                 int result = StringCalculatorUtility.Add(input);

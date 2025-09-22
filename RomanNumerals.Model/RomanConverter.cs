@@ -64,6 +64,8 @@ namespace RomanNumerals.Model
             {
                 throw new ArgumentException("Input must be a valid integer string", nameof(number));
             }
+
+            // The maximum number you can make with "normal" Roman numerals, meaning without any special overbars, is 3,999 (MMMCMXCIX) because you cannot repeat a symbol four times, and M is the largest single symbol. 
             if (numericValue <= 0 || numericValue > 3999)
             {
                 throw new ArgumentOutOfRangeException(nameof(number), "Input must be between 1 and 3999");
